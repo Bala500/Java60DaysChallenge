@@ -1,97 +1,145 @@
-package part2.compositiontask;
+package part2;
+// Program No : 1
+class Engine {
+	String EngineNumber;
+	String EngineType;
 
-/*class brand1
-{
-	String brand="Oneplus";
+	Engine(String EN, String ET) {
+		this.EngineNumber = EN;
+		this.EngineType = ET;
+
+	}
+
+	void displayEngine() {
+		System.out.println("EngineNumber :" + EngineNumber);
+		System.out.println("EngineType :" + EngineType);
+	}
 }
-class brand2
-{
-	String brand="Oppo";
+
+class Cars {
+	String CarName;
+	Engine engine;
+	
+
+	Cars(String CN, String EN, String ET) {
+		this.CarName = CN;
+		 engine = new Engine(EN, ET);
+	}
+
+	void displayCar() {
+		System.out.println("CarName :" + CarName);
+		engine.displayEngine();
+	}
 }
-class mobile
-{
-	static brand1 b1=new brand1();
-	brand2 b2=new brand2();
-}
+
 public class Composition {
 	public static void main(String[] args) {
-		mobile m1=new mobile();
-		System.out.println("Mobile Name :"+m1.b1.brand);
-		System.out.println("Mobile Name :"+m1.b2.brand);
-		System.out.println(mobile.b1.brand);
+		
+		Cars c1=new Cars("BMW","FSD3234X23S","Petrol");
+		c1.displayCar();
+		
+
+	}
+
+	
+}
+// End
+
+// Program No : 2
+
+class Battery
+{
+	String Capacity;
+	String BatteryType;
+	
+	Battery(String CC,String BT)
+	{
+		this.Capacity=CC;
+		this.BatteryType=BT;
+	}
+	void displayBattery()
+	{
+		System.out.println("Battery Capacity :"+Capacity);
+		System.out.println("Battery Type :"+BatteryType);
+	}
+}
+class Mobile
+{
+	String Brand;
+	String Model;
+	Battery battery;
+	
+	Mobile(String MB,String MM,String CC,String BT)
+	{
+		this.Brand=MB;
+		this.Model=MM;	
+		battery=new Battery(CC,BT);
+	}
+	
+	void displayMobile()
+	{
+		System.out.println("Mobile Brand :"+Brand);
+		System.out.println("Mobile Model :"+Model);
+		battery.displayBattery();
 	}
 	
 }
-*/
-
-class monitor {
-	public static Object m1;
-	String os = "window 11";
-
-	void display() {
-		System.out.println("use to display");
-	}
-
-}
-
-class keyboard {
-	int key = 42;
-
-	void type() {
-		System.out.println("use to type");
-	}
-}
-
-class computer {
-	static monitor m1 = new monitor();
-	keyboard k1 = new keyboard();
-
-}
-
-class Main {
-	public static void main(String[] args) {
-		System.out.println(computer.m1.os);
-		computer.m1.display();
-		computer c1 = new computer();
-		System.out.println(c1.k1.key);
-		c1.k1.type();
-
-	}
-}
-
-class Engine {
-	int engnum = 1323432;
-	String ft = "Diesel";
-
-	void engine() {
-		System.out.println("Engine Number is :" + engnum);
-		System.out.println("Vehicle Type :" + ft);
-	}
-}
-
-class car {
-		String car = "BMW";
-		String model = "M5";
-
-		void cars() {
-			System.out.println("The car Name is :" + car);
-			System.out.println("The car Model is :" + model);
-		}
-}
-
-class funtion {
-			Engine eng = new Engine();
-			car call = new car();
-}
-class all
+class Main
 {
 	public static void main(String[] args) {
-		funtion fun=new funtion();
-		fun.eng.engine();
-		fun.call.cars();
-		
+		Mobile m1=new Mobile("Oneplus","Onplus 6","3400 mAh","Lithium-ion");
+		m1.displayMobile();
 	}
 }
 
 
+class Customer
+{
+	String CusName;
+	long Pno;
 	
+	Customer(String CN,long Pn)
+	{
+		this.CusName=CN;
+		this.Pno=Pn;
+	}
+	void displayCustomer()
+	{
+		System.out.println("Customer Name :"+CusName);
+		System.out.println("Customer ContactNumber :"+Pno);
+	}
+}
+class BankAccounts
+{
+
+	long AccNum;
+	double Balance;
+	Customer cus;
+	
+	BankAccounts(String CN,long Pn,long Ac,double bal)
+	{
+		this.AccNum=Ac;
+		this.Balance=bal;
+		this.cus=new Customer(CN,Pn);
+		
+	}
+	void displayBA()
+	
+	{
+		cus.displayCustomer();
+		System.out.println("Account HolderNumber :"+AccNum);
+		System.out.println("Account Balance :"+Balance);
+		
+	}
+	
+}
+class Operation
+{
+	public static void main(String []args)
+	{
+		BankAccounts b1=new BankAccounts("Bala",876523454,34234233,350000);
+		b1.displayBA();
+	}
+}
+
+
