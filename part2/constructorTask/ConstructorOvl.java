@@ -100,4 +100,48 @@ class Employees {
     }
 }
 
+// 3 Program 
+class Product
+{
+	String ProductName;
+	int ProductId;
+	double Price;
+	String Category;
+	
+	Product(String PN)
+	{
+		this.ProductName=PN;
+	}
+	Product(String PN,int PI)
+	{
+		this.ProductName=PN;
+		this.ProductId=PI;
+	}
+	Product(String PN,int PI,double Pri,String Cat)
+	{
+		this.ProductName=PN;
+		this.ProductId=PI;
+		this.Price=Pri;
+		this.Category=Cat;
+	}
+	void displayProduct()
+	{
+		System.out.println("Product Name :"+ProductName);
+		System.out.println("Product ID :"+ProductId);
+		System.out.println("Product Price :"+Price);
+		System.out.println("Product Category :"+Category);
+	}
+	public static void main(String [] args )
+	{
+		Product P1= new Product("Laptop");
+		P1.displayProduct();
+		System.out.println("---------------");
+		Product P2= new Product("Mobile",201);
+		P2.displayProduct();
+		System.out.println("---------------");
+		Product P3= new Product("HeadPhones",202,2300,"Electronic");
+		P3.displayProduct();
+		
+	}
+}
 
