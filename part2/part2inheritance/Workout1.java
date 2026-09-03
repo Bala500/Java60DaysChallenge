@@ -32,3 +32,34 @@ public class Workout1 {
 	
 
 }
+
+
+
+
+
+// Program No : 2
+class Developer extends Employees
+{			
+	String ProLan;
+	Developer(String name,int empid,double salary,String ProLan)
+	{
+		
+		super(name,empid,salary);
+		this.ProLan=ProLan;
+		
+	}
+	void displaydev()
+	{
+		System.out.println("Programming Language :"+ProLan);
+	}
+	
+}
+class Workout2
+{
+	public static void main(String[] args) {
+		Developer d1=new Developer("Raju", 3, 50000, "python");
+		d1.displayemp();
+		d1.displaydev();
+	}
+}
+
