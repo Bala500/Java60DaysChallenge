@@ -1,5 +1,5 @@
 package part2inheritance;
-//In this Class i WorkOut Multi Inheritance 
+//In this Class MLIW means (Multi level Inheritance concepts) i WorkOut 
 
 class Company
 {
