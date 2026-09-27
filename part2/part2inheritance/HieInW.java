@@ -19,7 +19,6 @@ class Hospital
 		System.out.println("Hospital Name :"+HospitalName);
 		System.out.println("Hospital Location :"+Location);
 	}
-	
 }
 
 class Doctor extends Hospital
@@ -92,7 +91,6 @@ class Vehicle
 	{
 		System.out.println("Brand : "+Brand);
 		System.out.println("Speed : "+Speed);
-		
 	}
 	
 }
