@@ -18,7 +18,6 @@ class Engine implements Machine
 		System.out.println("Engine uses fuel");
 	}
 }
- 
 class Cars extends Engine
 {
 	void drive()
